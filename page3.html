@@ -17,8 +17,36 @@ var MemberSpace = window.MemberSpace || {"subdomain":"github6"};
   e.parentNode.insertBefore(s,e);
 }(document));
 </script>
+  <script type="text/javascript">
+        var MemberSpace = window.MemberSpace || {subdomain: "YOUR_SUBDOMAIN"};
+
+        (function(d){
+            var s = d.createElement("script");
+            s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+            var e = d.getElementsByTagName("script")[0];
+            e.parentNode.insertBefore(s,e);
+        }(document));
+
+        // Event listener for when MemberSpace is ready
+        document.addEventListener('MemberSpace.ready', function(e) {
+            console.log('MemberSpace is ready');
+        });
+
+        // Event listener for when member info is available
+        document.addEventListener('MemberSpace.member.info', function(e) {
+            var member = e.detail;
+
+            // If the member is logged in
+            if (member) {
+                document.getElementById('message').textContent = "Hello " + member.firstName;
+            } else {
+                document.getElementById('message').textContent = "Please Login";
+            }
+        });
+    </script>
 </head>
 <body>
+   <p id="message"></p>
   <header>
     <nav>
       <ul>
