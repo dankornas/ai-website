@@ -17,27 +17,18 @@ var MemberSpace = window.MemberSpace || {"subdomain":"github6"};
   e.parentNode.insertBefore(s,e);
 }(document));
     
-
-        // Event listener for when MemberSpace is ready
-        document.addEventListener('MemberSpace.ready', function(e) {
-            console.log('MemberSpace is ready');
-        });
-
-        // Event listener for when member info is available
-        document.addEventListener('MemberSpace.member.info', function(e) {
-            var member = e.detail;
-
-            // If the member is logged in
-            if (member) {
-                document.getElementById('message').textContent = "Hello " + member.keys();
-            } else {
-                document.getElementById('message').textContent = "Please Login";
-            }
-        });
+ function displayMemberInfo() {
+      const data = MemberSpace.getMemberInfo();
+      if (data.isLoggedIn) {
+        document.getElementById("message").innerText = `Hello ${data.memberInfo.firstName}`;
+      } else {
+        document.getElementById("message").innerText = "Please Login";
+      }
+    }
     </script>
 </head>
-<body>
-   <p id="message"></p>
+<body onload="displayMemberInfo()">
+  <h1 id="message"></h1>
   <header>
     <nav>
       <ul>
