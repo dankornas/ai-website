@@ -10,39 +10,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
      <script>
-var MemberSpace = window.MemberSpace || {"subdomain":"github6"};
-(function(d){
-  var s = d.createElement("script");
-  s.src = "https://cdn.memberspace.com/scripts/widgets.js";
-  var e = d.getElementsByTagName("script")[0];
-  e.parentNode.insertBefore(s,e);
-}(document));
-       
-  var MemberSpace = window.MemberSpace || {subdomain: "YOUR_SUBDOMAIN"};
-
-        (function(d){
-            var s = d.createElement("script");
-            s.src = "https://cdn.memberspace.com/scripts/widgets.js";
-            var e = d.getElementsByTagName("script")[0];
-            e.parentNode.insertBefore(s,e);
-        }(document));
-
-        // Event listener for when MemberSpace is ready
-        document.addEventListener('MemberSpace.ready', function(e) {
-            console.log('MemberSpace is ready');
-        });
-
-        // Event listener for when member info is available
-        document.addEventListener('MemberSpace.member.info', function(e) {
-            var member = e.detail;
-
-            // If the member is logged in
-            if (member) {
-                document.getElementById('message').textContent = "Hello " + member.firstName;
-            } else {
-                document.getElementById('message').textContent = "Please Login";
-            }
-        });
+// var MemberSpace = window.MemberSpace || {"subdomain":"github6"};
+// (function(d){
+//   var s = d.createElement("script");
+//   s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+//   var e = d.getElementsByTagName("script")[0];
+//   e.parentNode.insertBefore(s,e);
+// }(document));
        
 </script>
   </head>
